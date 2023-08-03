@@ -1,0 +1,153 @@
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+
+public class Student {
+    private String name;
+    private int age;
+    private int grade;
+public class Song {
+    private String title;
+    private String artist;
+    private int duration;
+
+    public Student(String name, int age, int grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    public Song(String title, String artist, int duration) {
+        this.title = title;
+        this.artist = artist;
+        this.duration = duration;
+    }
+
+    public String getName() {
+        return name;
+    public String getTitle() {
+        return title;
+    }
+
+    public int getAge() {
+        return age;
+    public String getArtist() {
+        return artist;
+    }
+
+    public int getGrade() {
+        return grade;
+    public int getDuration() {
+        return duration;
+    }
+}
+
+public class Playlist {
+    private List<Song> playlist;
+
+    public Playlist() {
+        playlist = new LinkedList<>();
+    }
+
+    public void addSongToBeginning(Song song) {
+        playlist.add(0, song);
+    }
+
+    public void addSongToEnd(Song song) {
+        playlist.add(song);
+    }
+
+    public Song removeSongFromBeginning() {
+        if (isEmpty()) {
+            return null;
+        }
+        return playlist.remove(0);
+    }
+
+    public Song removeSongFromEnd() {
+        if (isEmpty()) {
+            return null;
+        }
+        return playlist.remove(playlist.size() - 1);
+    }
+
+    public void shufflePlaylist() {
+        Random rand = new Random();
+        for (int i = playlist.size() - 1; i > 0; i--) {
+            int j = rand.nextInt(i + 1);
+            Song temp = playlist.get(i);
+            playlist.set(i, playlist.get(j));
+            playlist.set(j, temp);
+        }
+    }
+
+    public boolean isEmpty() {
+        return playlist.isEmpty();
+    }
+
+    public void printPlaylist() {
+        for (Song song : playlist) {
+            System.out.println("Title: " + song.getTitle());
+            System.out.println("Artist: " + song.getArtist());
+            System.out.println("Duration: " + song.getDuration() + " seconds");
+            System.out.println();
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a linked list of students
+        List<Student> studentList = new LinkedList<>();
+
+        // Add students to the list
+        studentList.add(new Student("John", 18, 85));
+        studentList.add(new Student("Julie", 19, 92));
+        studentList.add(new Student("Sam", 20, 76));
+        studentList.add(new Student("Olivia", 19, 95));
+        studentList.add(new Student("William", 21, 81));
+
+        // Print all students
+        printStudents(studentList);
+    }
+
+    public static void printStudents(List<Student> students) {
+        System.out.println("All Students:");
+        for (Student student : students) {
+            System.out.println("Name: " + student.getName());
+            System.out.println("Age: " + student.getAge());
+            System.out.println("Grade: " + student.getGrade());
+        Playlist playlist = new Playlist();
+
+        Song song1 = new Song("Song 1", "Artist 1", 240);
+        Song song2 = new Song("Song 2", "Artist 2", 180);
+        Song song3 = new Song("Song 3", "Artist 3", 320);
+
+        playlist.addSongToEnd(song1);
+        playlist.addSongToEnd(song2);
+        playlist.addSongToEnd(song3);
+
+        System.out.println("Original Playlist:");
+        playlist.printPlaylist();
+
+        Song removedSongFromBeginning = playlist.removeSongFromBeginning();
+        if (removedSongFromBeginning != null) {
+            System.out.println("Removed Song from the Beginning:");
+            System.out.println("Title: " + removedSongFromBeginning.getTitle());
+            System.out.println("Artist: " + removedSongFromBeginning.getArtist());
+            System.out.println("Duration: " + removedSongFromBeginning.getDuration() + " seconds");
+            System.out.println();
+        }
+
+        Song removedSongFromEnd = playlist.removeSongFromEnd();
+        if (removedSongFromEnd != null) {
+            System.out.println("Removed Song from the End:");
+            System.out.println("Title: " + removedSongFromEnd.getTitle());
+            System.out.println("Artist: " + removedSongFromEnd.getArtist());
+            System.out.println("Duration: " + removedSongFromEnd.getDuration() + " seconds");
+            System.out.println();
+        }
+
+        System.out.println("Shuffled Playlist:");
+        playlist.shufflePlaylist();
+        playlist.printPlaylist();
+    }
+}
