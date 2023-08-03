@@ -1,0 +1,17 @@
+class Fruit{
+    String name;
+    public Fruit(String fruitName){
+        name = fruitName;
+    }
+    public void run(){
+        System.out.println( this.name + " is running");
+    }
+}
+public class Grapefruit extends Fruit {
+    public Grapefruit() {super("Pineapple");    }
+    public static void main(String[] args) {
+        Grapefruit f1 = new Grapefruit();
+        f1.run();
+    }
+}
+
