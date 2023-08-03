@@ -1,0 +1,49 @@
+package DogPackage;
+
+import java.util.Scanner;
+
+class Dog {
+    private String name;
+    private int foodQuantity;
+    public Dog(String name, int foodQuantity) {
+        this.name = name;
+        this.foodQuantity = foodQuantity;
+    }
+    public String getName() {
+        return name;
+    }
+    public int getFoodQuantity() {
+        return foodQuantity;
+    }
+    public void setFoodQuantity(int foodQuantity) {
+        this.foodQuantity = foodQuantity;
+    }
+}
+public class RetrieveDogFood {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        // Create a Dog with initial food quantity
+        Dog dog = new Dog("Bullet", 10);
+        // Print initial status
+        System.out.println("Dog: " + dog.getName());
+        System.out.println("Initial Food Quantity: " + dog.getFoodQuantity() + " units");
+        // Retrieve stolen dog food
+        System.out.print("Enter the amount of stolen dog food: ");
+        int stolenFood = scanner.nextInt();
+        // Update food quantity after retrieval
+        dog.setFoodQuantity(dog.getFoodQuantity() - stolenFood);
+        // Print final status
+        System.out.println("Dog: " + dog.getName());
+        System.out.println("Remaining Food Quantity: " + dog.getFoodQuantity() + " units");
+        scanner.close();
+    }
+}
+
+
+//Output:
+Dog: Bullet
+Initial food Quantity: 10 units
+Enter the amount of stolen dog food: 2
+Dog: Bullet
+Remaining Food Quantity: 8 units
+
