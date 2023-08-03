@@ -84,4 +84,32 @@ public class Main {
         list.traverseFromEnd();
     }
 }
- 
+
+output:
+Displaying students in the linked list:
+Name: Alice
+ID: 1001
+Grade: 85
+----------------------
+Name: Bob
+ID: 1002
+Grade: 92
+----------------------
+Name: Charlie
+ID: 1003
+Grade: 78
+----------------------
+
+Traversing the linked list from end to beginning:
+Name: Charlie
+ID: 1003
+Grade: 78
+----------------------
+Name: Bob
+ID: 1002
+Grade: 92
+----------------------
+Name: Alice
+ID: 1001
+Grade: 85
+----------------------
