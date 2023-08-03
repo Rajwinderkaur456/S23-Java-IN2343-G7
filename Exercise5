@@ -1,0 +1,85 @@
+import java.util.Stack;
+
+public class Action {
+    private String type;
+    private String parameters;
+
+    public Action(String type, String parameters) {
+        this.type = type;
+        this.parameters = parameters;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getParameters() {
+        return parameters;
+    }
+}
+
+public class DrawingApp {
+    private Stack<Action> undoStack;
+    private Stack<Action> redoStack;
+
+    public DrawingApp() {
+        undoStack = new Stack<>();
+        redoStack = new Stack<>();
+    }
+
+    public void addActionToUndoStack(Action action) {
+        undoStack.push(action);
+    }
+
+    public void moveToRedoStack() {
+        if (!undoStack.isEmpty()) {
+            redoStack.push(undoStack.pop());
+        }
+    }
+
+    public void moveToUndoStack() {
+        if (!redoStack.isEmpty()) {
+            undoStack.push(redoStack.pop());
+        }
+    }
+
+    public Action peekUndoAction() {
+        if (!undoStack.isEmpty()) {
+            return undoStack.peek();
+        }
+        return null;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        DrawingApp drawingApp = new DrawingApp();
+
+        Action action1 = new Action("draw", "Shape: Rectangle");
+        Action action2 = new Action("move", "Shape: Circle, Coordinates: (190, 390)");
+        Action action3 = new Action("resize", "Shape: Triangle, Scale: 2.5");
+
+        drawingApp.addActionToUndoStack(action1);
+        drawingApp.addActionToUndoStack(action2);
+        drawingApp.addActionToUndoStack(action3);
+
+        Action recentAction = drawingApp.peekUndoAction();
+        if (recentAction != null) {
+            System.out.println("Most Recent Action:");
+            System.out.println("Type: " + recentAction.getType());
+            System.out.println("Parameters: " + recentAction.getParameters());
+            System.out.println();
+        }
+
+        drawingApp.moveToRedoStack();
+        drawingApp.moveToUndoStack();
+
+        recentAction = drawingApp.peekUndoAction();
+        if (recentAction != null) {
+            System.out.println("Most Recent Action:");
+            System.out.println("Type: " + recentAction.getType());
+            System.out.println("Parameters: " + recentAction.getParameters());
+            System.out.println();
+        }
+    }
+}
