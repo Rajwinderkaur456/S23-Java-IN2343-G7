@@ -6,7 +6,7 @@
 package CarPackage;
 public class Car {
     private int speed;       // Speed in km/h
-    private String direction; // Direction: "N" (North), "S" (South), "W" (West), "E" (East)
+    private String direction; // Direction: "N" (North), "S" (South), "E" (East), "W" (West)
     public Car(int speed, String direction) {
         this.speed = speed;
         this.direction = direction;
@@ -35,7 +35,7 @@ public class IntersectionSimulator {
         Car[] cars = new Car[20];
         for (int i = 0; i < cars.length; i++) {
 			int speed = rand.nextInt(60) + 20; // Speed between 20 and 80 km/h
-            String[] directions = {"N", "S", "W", "E"};
+            String[] directions = {"N", "S", "E", "W"};
             String direction = directions[rand.nextInt(directions.length)];
             cars[i] = new Car(speed, direction);
         }
@@ -44,7 +44,7 @@ public class IntersectionSimulator {
             System.out.println("Time: " + time + " seconds");
             // Randomly set the traffic light to green for one direction
             int randomDirectionIndex = rand.nextInt(4);
-            String[] directions = {"N", "S", "W", "E"};
+            String[] directions = {"N", "S", "E", "W"};
             String greenDirection = directions[randomDirectionIndex];
             System.out.println("Traffic light is green for: " + greenDirection);
 			trafficLight.setGreen(true);
@@ -79,5 +79,32 @@ public class TrafficLight {
         return isGreen;
     }
 }
+
+Output:
+//Output:
+Time: 0 seconds
+Traffic light is green for: S
+Car waiting at red light: N
+Car waiting at red light: N
+Car waiting at red light: W
+Car going S with speed 46 km/h
+Car going S with speed 24 km/h
+Car waiting at red light: W
+Car waiting at red light: W
+Car waiting at red light: N
+Car waiting at red light: N
+Car waiting at red light: W
+Car waiting at red light: N
+Car waiting at red light: E
+Car waiting at red light: W
+Car waiting at red light: E
+Car waiting at red light: W
+Car waiting at red light: W
+Car waiting at red light: N
+Car waiting at red light: N
+Car waiting at red light: W
+Car waiting at red light: E
+------------------
+
 
 
