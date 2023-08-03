@@ -1,0 +1,87 @@
+class Student {
+    String name;
+    int id;
+    int grade;
+
+    public Student(String name, int id, int grade) {
+        this.name = name;
+        this.id = id;
+        this.grade = grade;
+    }
+}
+
+// Node class represents a single node in the linked list
+class Node {
+    Student data; // Student object
+    Node next; // Reference to the next node
+
+    public Node(Student student) {
+        data = student;
+        next = null;
+    }
+}
+
+// LinkedList class represents the linked list data structure
+class LinkedList {
+    Node head; // Reference to the first node in the linked list
+
+    // Method to add a student to the linked list
+    public void addStudent(Student student) {
+        Node newNode = new Node(student);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+
+    // Method to display the student information in the linked list
+    public void displayStudents() {
+        Node current = head;
+        while (current != null) {
+            Student student = current.data;
+            System.out.println("Name: " + student.name);
+            System.out.println("ID: " + student.id);
+            System.out.println("Grade: " + student.grade);
+            System.out.println("----------------------");
+            current = current.next;
+        }
+    }
+
+    // Method to traverse the linked list from end to beginning
+    public void traverseFromEnd() {
+        traverseFromEndHelper(head);
+    }
+
+    private void traverseFromEndHelper(Node node) {
+        if (node == null) {
+            return;
+        }
+        traverseFromEndHelper(node.next);
+        Student student = node.data;
+        System.out.println("Name: " + student.name);
+        System.out.println("ID: " + student.id);
+        System.out.println("Grade: " + student.grade);
+        System.out.println("----------------------");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.addStudent(new Student("Alice", 1001, 85));
+        list.addStudent(new Student("Bob", 1002, 92));
+        list.addStudent(new Student("Charlie", 1003, 78));
+
+        System.out.println("Displaying students in the linked list:");
+        list.displayStudents();
+
+        System.out.println("\nTraversing the linked list from end to beginning:");
+        list.traverseFromEnd();
+    }
+}
+ 
