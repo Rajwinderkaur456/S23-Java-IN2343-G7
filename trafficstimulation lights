@@ -111,3 +111,165 @@ class TrafficLight {
     }
 }
 
+//Output
+Time: 0 seconds
+Traffic light is green for: E
+Car going E with speed 62 km/h
+Car waiting at red light: N
+Car going E with speed 44 km/h
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: S
+Car waiting at red light: W
+Car waiting at red light: N
+------------------
+Time: 1 seconds
+Traffic light is green for: N
+Car waiting at red light: E
+Car going N with speed 44 km/h
+Car waiting at red light: E
+Car going N with speed 59 km/h
+Car waiting at red light: S
+Car going N with speed 70 km/h
+Car waiting at red light: S
+Car waiting at red light: S
+Car waiting at red light: W
+Car going N with speed 70 km/h
+------------------
+Time: 2 seconds
+Traffic light is green for: W
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: S
+Car going W with speed 57 km/h
+Car waiting at red light: N
+------------------
+Time: 3 seconds
+Traffic light is green for: S
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: E
+Car waiting at red light: N
+Car going S with speed 79 km/h
+Car waiting at red light: N
+Car going S with speed 75 km/h
+Car going S with speed 22 km/h
+Car waiting at red light: W
+Car waiting at red light: N
+------------------
+Time: 4 seconds
+Traffic light is green for: S
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: E
+Car waiting at red light: N
+Car going S with speed 79 km/h
+Car waiting at red light: N
+Car going S with speed 75 km/h
+Car going S with speed 22 km/h
+Car waiting at red light: W
+Car waiting at red light: N
+------------------
+Time: 5 seconds
+Traffic light is green for: W
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: S
+Car going W with speed 57 km/h
+Car waiting at red light: N
+------------------
+Time: 6 seconds
+Traffic light is green for: S
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: E
+Car waiting at red light: N
+Car going S with speed 79 km/h
+Car waiting at red light: N
+Car going S with speed 75 km/h
+Car going S with speed 22 km/h
+Car waiting at red light: W
+Car waiting at red light: N
+------------------
+Time: 7 seconds
+Traffic light is green for: W
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: S
+Car going W with speed 57 km/h
+Car waiting at red light: N
+------------------
+Time: 8 seconds
+Traffic light is green for: W
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: E
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: S
+Car going W with speed 57 km/h
+Car waiting at red light: N
+------------------
+Time: 9 seconds
+Traffic light is green for: E
+Car going E with speed 62 km/h
+Car waiting at red light: N
+Car going E with speed 44 km/h
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: N
+Car waiting at red light: S
+Car waiting at red light: S
+Car waiting at red light: W
+Car waiting at red light: N
+------------------
+
+---------- Report ----------
+Direction: N
+Color Red: 2 cars
+Color Green: 0 cars
+Color Yellow: 1 cars
+Color Blue: 0 cars
+Color Pink: 1 cars
+------------------
+Direction: S
+Color Red: 0 cars
+Color Green: 0 cars
+Color Yellow: 3 cars
+Color Blue: 3 cars
+Color Pink: 3 cars
+------------------
+Direction: E
+Color Red: 0 cars
+Color Green: 0 cars
+Color Yellow: 2 cars
+Color Blue: 0 cars
+Color Pink: 2 cars
+------------------
+Direction: W
+Color Red: 0 cars
+Color Green: 0 cars
+Color Yellow: 0 cars
+Color Blue: 0 cars
+Color Pink: 4 cars
+------------------
+
