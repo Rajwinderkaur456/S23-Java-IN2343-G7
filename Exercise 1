@@ -1,0 +1,41 @@
+public class Main {
+    public static void main(String[] args) {
+        // Create a linked list of books
+        BookLinkedList bookList = new BookLinkedList();
+
+        // Add books to the list
+        bookList.addToEnd(new Book("Book 1", "Author 1", 2021));
+        bookList.addToEnd(new Book("Book 2", "Author 2", 2019));
+        bookList.addToBeginning(new Book("Book 3", "Author 3", 2020));
+        bookList.addToEnd(new Book("Book 4", "Author 4", 2018));
+        bookList.addToEnd(new Book("Book 5", "Author 5", 2017));
+        bookList.addToBeginning(new Book("Book 6", "Author 6", 2016));
+        bookList.addToEnd(new Book("Book 7", "Author 7", 2015));
+        bookList.addToEnd(new Book("Book 8", "Author 8", 2014));
+        bookList.addToBeginning(new Book("Book 9", "Author 9", 2013));
+        bookList.addToEnd(new Book("Book 10", "Author 10", 2012));
+
+        // Print the list of books
+        System.out.println("List of Books:");
+        bookList.printList();
+
+        // Remove a book from the beginning
+        Book removedBookFromBeginning = bookList.removeFromBeginning();
+        if (removedBookFromBeginning != null) {
+            System.out.println("Removed Book from the Beginning:");
+       public class Main {
+            System.out.println();
+        }
+
+        // Remove a book from the end
+        Book removedBookFromEnd = bookList.removeFromEnd();
+        if (removedBookFromEnd != null) {
+            System. out.println("Removed Book from the End:");
+       public class Main {
+            System.out.println();
+        }
+
+        // Print the list of books in reverse order
+        System.out.println("List of Books in Reverse Order:");
+        bookList.printListReverse();
+    }
