@@ -1,0 +1,55 @@
+public class Main {
+    public static void main(String[] args) {
+        int[][] hallway = {
+                {0, 0, 1, 0},
+                {1, 0, 1, 1},
+                {0, 0, 0, 0},
+                {1, 1, 1, 0}
+        };
+        navigateHallway(hallway);
+    }
+    public static void navigateHallway(int[][] hallway) {
+        int[][] visited = new int[hallway.length][hallway[0].length];
+        explorePaths(hallway, visited, 0, 0);
+    }
+    public static void explorePaths(int[][] hallway, int[][] visited, int row, int col) {
+        int rows = hallway.length;
+        int cols = hallway[0].length;
+       
+        if (row == rows - 1 && col == cols - 1) {
+            visited[row][col] = 1;
+            printPath(visited);
+            visited[row][col] = 0;
+            return;
+        }
+        if (row >= 0 && row < rows && col >= 0 && col < cols && hallway[row][col] == 0 && visited[row][col] == 0) {
+          
+            visited[row][col] = 1;
+          
+            explorePaths(hallway, visited, row - 1, col); // Up
+            explorePaths(hallway, visited, row + 1, col); // Down
+            explorePaths(hallway, visited, row, col - 1); // Left
+            explorePaths(hallway, visited, row, col + 1); // Right
+            
+            visited[row][col] = 0;
+        }
+    }
+    public static void printPath(int[][] visited) {
+        System.out.println("Path:");
+        for (int i = 0; i < visited.length; i++) {
+            for (int j = 0; j < visited[0].length; j++) {
+                System.out.print(visited[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+}
+
+
+//Output
+Path:
+1 1 0 0 
+0 1 0 0 
+0 1 1 1 
+0 0 0 1
