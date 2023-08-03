@@ -1,0 +1,152 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Athlete {
+    private String name;
+    private int age;
+    private String sport;
+
+    public Athlete(String name, int age, String sport) {
+        this.name = name;
+        this.age = age;
+        this.sport = sport;
+public class Order {
+    private String customerName;
+    private String drinkType;
+    private String size;
+
+    public Order(String customerName, String drinkType, String size) {
+        this.customerName = customerName;
+        this.drinkType = drinkType;
+        this.size = size;
+    }
+
+    public String getName() {
+        return name;
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public int getAge() {
+        return age;
+    public String getDrinkType() {
+        return drinkType;
+    }
+
+    public String getSport() {
+        return sport;
+    public String getSize() {
+        return size;
+    }
+}
+
+public class AthleteQueue {
+    private Queue<Athlete> queue;
+public class OrderQueue {
+    private Queue<Order> queue;
+
+    public AthleteQueue() {
+    public OrderQueue() {
+        queue = new LinkedList<>();
+    }
+
+    public void enqueue(Athlete athlete) {
+        queue.add(athlete);
+    public void addOrder(Order order) {
+        queue.add(order);
+    }
+
+    public Athlete dequeue() {
+    public Order removeOrder() {
+        if (isEmpty()) {
+            return null;
+        }
+        return queue.poll();
+    }
+
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    public Order peekOrder() {
+        if (isEmpty()) {
+            return null;
+        }
+        return queue.peek();
+    }
+
+    public int size() {
+        return queue.size();
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        AthleteQueue athleteQueue = new AthleteQueue();
+
+        // Create 10 athletes and enqueue them into the queue
+        Athlete athlete1 = new Athlete("John", 25, "Football");
+        Athlete athlete2 = new Athlete("Julie", 28, "Basketball");
+        Athlete athlete3 = new Athlete("James", 30, "Swimming");
+        Athlete athlete4 = new Athlete("Raman", 22, "Tennis");
+        Athlete athlete5 = new Athlete("Sam", 27, "Soccer");
+        Athlete athlete6 = new Athlete("Olivia", 24, "Gymnastics");
+        Athlete athlete7 = new Athlete("William", 29, "Athletics");
+        Athlete athlete8 = new Athlete("Ava", 26, "Badminton");
+        Athlete athlete9 = new Athlete("Daniel", 23, "Boxing");
+        Athlete athlete10 = new Athlete("Mia", 31, "Cycling");
+
+        athleteQueue.enqueue(athlete1);
+        athleteQueue.enqueue(athlete2);
+        athleteQueue.enqueue(athlete3);
+        athleteQueue.enqueue(athlete4);
+        athleteQueue.enqueue(athlete5);
+        athleteQueue.enqueue(athlete6);
+        athleteQueue.enqueue(athlete7);
+        athleteQueue.enqueue(athlete8);
+        athleteQueue.enqueue(athlete9);
+        athleteQueue.enqueue(athlete10);
+
+
+        System.out.println("Athletes in the queue:");
+        for (Athlete athlete : athleteQueue) {
+            System.out.println("Name: " + athlete.getName());
+            System.out.println("Age: " + athlete.getAge());
+            System.out.println("Sport: " + athlete.getSport());
+        // Create a queue of customer orders
+        OrderQueue orderQueue = new OrderQueue();
+
+        // Add orders to the queue
+        Order order1 = new Order("John", "Cappuccino", "Medium");
+        Order order2 = new Order("Julie", "Latte", "Small");
+        Order order3 = new Order("Sam", "Espresso", "Large");
+
+        orderQueue.addOrder(order1);
+        orderQueue.addOrder(order2);
+        orderQueue.addOrder(order3);
+
+        // Print the next order without removing it
+        Order nextOrder = orderQueue.peekOrder();
+        if (nextOrder != null) {
+            System.out.println("Next Order:");
+            System.out.println("Customer Name: " + nextOrder.getCustomerName());
+            System.out.println("Drink Type: " + nextOrder.getDrinkType());
+            System.out.println("Size: " + nextOrder.getSize());
+            System.out.println();
+        }
+
+        // Remove the next order
+        Order removedOrder = orderQueue.removeOrder();
+        if (removedOrder != null) {
+            System.out.println("Removed Order:");
+            System.out.println("Customer Name: " + removedOrder.getCustomerName());
+            System.out.println("Drink Type: " + removedOrder.getDrinkType());
+            System.out.println("Size: " + removedOrder.getSize());
+            System.out.println();
+        }
+
+        // Check if the queue is empty
+        System.out.println("Is queue empty? " + orderQueue.isEmpty());  // Output: false
+    }
+}
