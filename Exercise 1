@@ -39,3 +39,37 @@ public class Main {
         System.out.println("List of Books in Reverse Order:");
         bookList.printListReverse();
     }
+
+
+output:
+List of Books:
+Book 9 (Author 9, 2013)
+Book 6 (Author 6, 2016)
+Book 3 (Author 3, 2020)
+Book 1 (Author 1, 2021)
+Book 2 (Author 2, 2019)
+Book 4 (Author 4, 2018)
+Book 5 (Author 5, 2017)
+Book 7 (Author 7, 2015)
+Book 8 (Author 8, 2014)
+Book 10 (Author 10, 2012)
+Removed Book from the Beginning:
+Book 9 (Author 9, 2013)
+Removed Book from the End:
+Book 10 (Author 10, 2012)
+List of Books in Reverse Order:
+Book 8 (Author 8, 2014)
+Book 7 (Author 7, 2015)
+Book 5 (Author 5, 2017)
+Book 4 (Author 4, 2018)
+Book 2 (Author 2, 2019)
+Book 1 (Author 1, 2021)
+Book 3 (Author 3, 2020)
+Book 6 (Author 6, 2016)
+Book 1 (Author 1, 2021)
+
+
+
+
+
+
