@@ -1,51 +1,53 @@
 import java.util.Stack;
 
-public class Book {
+class Book {
     private String title;
     private String author;
-public class WebPage {
-    private String url;
-    private String timestamp;
 
     public Book(String title, String author) {
         this.title = title;
         this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+}
+
+class WebPage {
+    private String url;
+    private String timestamp;
+
     public WebPage(String url, String timestamp) {
         this.url = url;
         this.timestamp = timestamp;
     }
 
-    public String getTitle() {
-        return title;
     public String getUrl() {
         return url;
     }
 
-    public String getAuthor() {
-        return author;
     public String getTimestamp() {
         return timestamp;
     }
 }
 
-public class BookStack {
+class BookStack {
     private Stack<Book> stack;
-public class WebPageStack {
-    private Stack<WebPage> stack;
 
     public BookStack() {
-    public WebPageStack() {
         stack = new Stack<>();
     }
 
     public void push(Book book) {
         stack.push(book);
-    public void addWebPage(WebPage webPage) {
-        stack.push(webPage);
     }
 
     public Book pop() {
-    public WebPage removeWebPage() {
         if (isEmpty()) {
             return null;
         }
@@ -58,19 +60,46 @@ public class WebPageStack {
 
     public int size() {
         return stack.size();
-    public WebPage peekWebPage() {
-        if (isEmpty()) {
-            return null;
-        }
-        return stack.peek();
     }
 
     public void walkStack() {
         for (Book book : stack) {
             System.out.println(book.getTitle());
         }
+    }
+
     public boolean isEmpty() {
         return stack.isEmpty();
+    }
+}
+
+class WebPageStack {
+    private Stack<WebPage> stack;
+
+    public WebPageStack() {
+        stack = new Stack<>();
+    }
+
+    public void addWebPage(WebPage webPage) {
+        stack.push(webPage);
+    }
+
+    public WebPage removeWebPage() {
+        if (isEmpty()) {
+            return null;
+        }
+        return stack.pop();
+    }
+
+    public boolean isEmpty() {
+        return stack.isEmpty();
+    }
+
+    public WebPage peekWebPage() {
+        if (isEmpty()) {
+            return null;
+        }
+        return stack.peek();
     }
 }
 
@@ -78,7 +107,6 @@ public class Main {
     public static void main(String[] args) {
 
         BookStack stack = new BookStack();
-
 
         Book book1 = new Book("Book 1", "Author 1");
         Book book2 = new Book("Book 2", "Author 2");
@@ -102,12 +130,10 @@ public class Main {
         stack.push(book9);
         stack.push(book10);
 
-
         stack.walkStack();
-        // Create a stack of web pages
+
         WebPageStack webPageStack = new WebPageStack();
 
-        // Add web pages to the stack
         WebPage webPage1 = new WebPage("https://www.example1.com", "2022-08-01 10:30:00");
         WebPage webPage2 = new WebPage("https://www.example2.com", "2022-08-02 14:55:00");
         WebPage webPage3 = new WebPage("https://www.example3.com", "2022-08-03 16:34:00");
@@ -116,7 +142,6 @@ public class Main {
         webPageStack.addWebPage(webPage2);
         webPageStack.addWebPage(webPage3);
 
-        // Print the most recent web page without removing it
         WebPage recentWebPage = webPageStack.peekWebPage();
         if (recentWebPage != null) {
             System.out.println("Most Recent Web Page:");
@@ -125,7 +150,6 @@ public class Main {
             System.out.println();
         }
 
-        // Remove the most recent web page
         WebPage removedWebPage = webPageStack.removeWebPage();
         if (removedWebPage != null) {
             System.out.println("Removed Web Page:");
@@ -134,7 +158,28 @@ public class Main {
             System.out.println();
         }
 
-        // Check if the stack is empty
-        System.out.println("Is stack empty? " + webPageStack.isEmpty());  // Output: false
+        System.out.println("Is stack empty? " + webPageStack.isEmpty());
     }
 }
+
+output:
+Book 1
+Book 2
+Book 3
+Book 4
+Book 5
+Book 6
+Book 7
+Book 8
+Book 9
+Book 10
+
+Most Recent Web Page:
+URL: https://www.example3.com
+Timestamp: 2022-08-03 16:34:00
+
+Removed Web Page:
+URL: https://www.example3.com
+Timestamp: 2022-08-03 16:34:00
+
+Is stack empty? false
