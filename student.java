@@ -37,3 +37,9 @@ public class Student{
         return studentsAboveThreshold;
     }
 }
+
+Output:
+Students with grades above 80.0:
+Name: John, Grade: 80.5
+Name: Alice, Grade: 90.2
+
