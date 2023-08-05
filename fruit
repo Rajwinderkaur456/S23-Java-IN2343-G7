@@ -15,3 +15,7 @@ public class Grapefruit extends Fruit {
     }
 }
 
+Output:
+Pineapple is running
+
+
