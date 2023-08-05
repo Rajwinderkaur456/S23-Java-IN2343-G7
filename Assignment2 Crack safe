@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        crackSafe();
+    }
+
+    public static void crackSafe() {
+        int safeCode = 0;
+        boolean found = false;
+
+        for (int i = 0; i <= 9 && !found; i++) {
+            for (int j = 0; j <= 9 && !found; j++) {
+                for (int k = 0; k <= 9 && !found; k++) {
+                    if (i != j && i != k && j != k && i + j + k == 20 && i * j * k == 36) {
+                        safeCode = i * 100 + j * 10 + k;
+                        found = true;
+                    }
+                }
+            }
+        }
+
+        if (found) {
+            System.out.println("Safe code found: " + safeCode);
+        } else {
+            System.out.println("No safe code found.");
+        }
+    }
+}
+
+Output:
+Safe code found: 135
