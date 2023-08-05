@@ -20,3 +20,12 @@ public class Main {
         }
     }	
 }
+
+Output:
+The code is: 1324
+The code is: 1423
+The code is: 2314
+The code is: 2413
+The code is: 3124
+The code is: 4123
+
