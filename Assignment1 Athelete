@@ -1,0 +1,147 @@
+public class Main {
+
+    public static void main(String[] args) {
+
+        QueueManager athleteQueue = new QueueManager();
+
+
+
+
+
+        Athlete athlete1 = new Athlete(null, 0, 0);
+
+        Athlete athlete2 = new Athlete("Athlete 2", 30, 8);
+
+        athleteQueue.enqueue(athlete1);
+
+        athleteQueue.enqueue(athlete2);
+
+
+
+        System.out.println("Queue size: " + athleteQueue.size());
+
+
+
+
+
+        Athlete dequeuedAthlete = athleteQueue.dequeue();
+
+        System.out.println("Dequeued athlete: " + dequeuedAthlete.name);
+
+
+
+
+
+        System.out.println("Is queue empty? " + athleteQueue.isEmpty());
+
+
+
+
+
+        Athlete frontAthlete = athleteQueue.peek();
+
+        System.out.println("Front athlete: " + frontAthlete.name);
+
+
+
+        Athlete dequeuedAthlete2 = athleteQueue.dequeue();
+
+        System.out.println("Dequeued athlete: " + dequeuedAthlete2.name);
+
+
+
+        System.out.println("Is queue empty? " + athleteQueue.isEmpty());
+
+
+
+    }
+
+}
+
+import java.util.LinkedList;
+
+import java.util.Queue;
+
+public class Athlete{
+    String name;
+    int age;
+    int runningDistanceEachDay;
+
+
+
+public Athlete(String name, int age, int runningDistanceEachDay) {
+
+    this.name = name;
+
+    this.age = age;
+
+    this.runningDistanceEachDay = runningDistanceEachDay;
+
+}
+
+}
+
+
+
+class QueueManager {
+
+private Queue<Athlete> queue;
+
+
+
+public QueueManager() {
+
+    queue = new LinkedList<>();
+
+}
+
+
+
+public void enqueue(Athlete athlete) {
+
+    queue.add(athlete);
+
+}
+
+
+
+public Athlete dequeue() {
+
+    return queue.poll();
+
+}
+
+
+
+public boolean isEmpty() {
+
+    return queue.isEmpty();
+
+}
+
+
+
+public int size() {
+
+    return queue.size();
+
+}
+
+
+
+public Athlete peek() {
+
+    return queue.peek();
+
+}
+
+}
+
+
+//Output
+Queue size: 2
+Dequeued athlete: null
+Is queue empty? false
+Front athlete: Athlete 2
+Dequeued athlete: Athlete 2
+Is queue empty? true
