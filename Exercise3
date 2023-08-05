@@ -150,3 +150,61 @@ public class Main {
         System.out.println("Is queue empty? " + orderQueue.isEmpty());  // Output: false
     }
 }
+
+Output:
+Athletes in the queue:
+Name: John
+Age: 25
+Sport: Football
+
+Name: Julie
+Age: 28
+Sport: Basketball
+
+Name: James
+Age: 30
+Sport: Swimming
+
+Name: Raman
+Age: 22
+Sport: Tennis
+
+Name: Sam
+Age: 27
+Sport: Soccer
+
+Name: Olivia
+Age: 24
+Sport: Gymnastics
+
+Name: William
+Age: 29
+Sport: Athletics
+
+Name: Ava
+Age: 26
+Sport: Badminton
+
+Name: Daniel
+Age: 23
+Sport: Boxing
+
+Name: Mia
+Age: 31
+Sport: Cycling
+
+Next Order:
+Customer Name: John
+Drink Type: Cappuccino
+Size: Medium
+
+Removed Order:
+Customer Name: John
+Drink Type: Cappuccino
+Size: Medium
+
+Is queue empty? false
+
+
+
+
