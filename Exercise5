@@ -83,3 +83,9 @@ public class Main {
         }
     }
 }
+
+Output:
+Most Recent Action:
+Type: resize
+Parameters: Shape: Triangle, Scale: 2.5
+
